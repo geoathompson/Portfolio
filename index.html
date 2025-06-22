@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
-<body>
+  <body>
+  <div class="container">
+
     <!-- Navigation Bar -->
 <nav>
   <ul>
@@ -20,9 +22,15 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Hi, I'm Geo Thompson</h1>
-  <p>Creative Developer | Lifelong Learner | Digital Storyteller</p>
-   <a href="#projects" class="btn">View My Work</a>
+  <div class="hero-content">
+    <h1>Hi, I'm Geo Thompson</h1>
+    <p>Creative Developer | Lifelong Learner | Digital Storyteller</p>
+    <a href="#projects" class="btn">View My Work</a>
+    <a href="resume/geo-thompson-resume.pdf" target="_blank" class="resume-btn">Download My Resume</a>
+
+  </div>
+</section>
+
   <!-- About Me Section -->
 <section id="about" class="about">
   <div class="about-glass">
@@ -44,32 +52,48 @@
   <!-- Projects Section -->
 <section id="projects" class="projects">
   <h2>My Projects</h2>
-  <div class="project-card">
+<div class="project-card">
+ <img src="images/project1.png" alt="Project 1 preview" class="project-img">
   <h3>Path2Tech Practice</h3>
   <p>This is my first GitHub repository, where I am practicing HTML, CSS, and core web concepts.</p>
   <a href="https://github.com/geoathompson/Path2TechPractice" target="_blank">View on GitHub</a>
 </div>
-
     <div class="project-card">
+     <img src="images/project2.png" alt="Project 2 preview" class="project-img">
       <h3>Project Two</h3>
-      <p>This could be a mock website or idea you're proud of.</p>
+      <p>This is a mock idea.</p>
     </div>
     <div class="project-card">
       <h3>Project Three</h3>
-      <p>Use this to showcase something you've built or plan to.</p>
+      <img src="images/project3.png" alt="Project 3 preview" class="project-img">
+      <p>This is to showcase something I have built or plan to.</p>
     </div>
   </div>
 </section>
+<div style="text-align: center;">
+ <a href="resume/geo-thompson-resume.pdf" class="resume-btn" target="_blank">View My Resume</a>
+</div>
 
 <!-- Footer Section -->
 <footer class="site-footer">
   <p>© 2025 Geo Thompson</p>
-  <a href="mailto:geoa.thompson@outlook.com" target="_blank"><i class="fas fa-envelope"></i></a>
-<a href="https://github.com/geoathompson" target="_blank"><i class="fab fa-github"></i></a>
-<a href="https://www.linkedin.com/in/geoathompson/" target="_blank"><i class="fab fa-linkedin"></i></a>
-
+  <div class="social-icons">
+    <a href="mailto:geoa.thompson@outlook.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/geoathompson" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/geoathompson/" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
 </footer>
 
+
+  </div>
+</footer>
+  </div>
+  <!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>You can reach me at <a href="mailto:geoa.thompson@outlook.com">geoa.thompson@outlook.com</a></p>
+</section>
+
 </body>
+
 </html>
