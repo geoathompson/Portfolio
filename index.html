@@ -6,20 +6,47 @@
   <title>Geo Thompson Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Tailwind Config FIRST -->
+ <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+  };
+</script>
 
+<!-- THEN the Tailwind CDN -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
 </head>
   <body>
     <!-- Trigger rebuild -->
-  <div class="container">
+<div class="container bg-white text-black dark:bg-black dark:text-white">
+
 
     <!-- Navigation Bar -->
-<nav>
-  <ul>
+<nav class="bg-white dark:bg-gray-900 p-4">
+
+  <ul class="text-black dark:text-white">
+
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button id="theme-toggle" class="ml-4 px-3 py-1 bg-gray-800 text-white dark:bg-white dark:text-black rounded">
+    Toggle Theme
+  </button>
 </nav>
+
 
 <!-- Hero Section -->
 <section class="hero">
@@ -59,41 +86,90 @@
   <p>This is my first GitHub repository, where I am practicing HTML, CSS, and core web concepts.</p>
   <a href="https://github.com/geoathompson/Path2TechPractice" target="_blank">View on GitHub</a>
 </div>
-    <div class="project-card">
-     <img src="images/project2.png" alt="Project 2 preview" class="project-img">
-      <h3>Project Two</h3>
-      <p>This is a mock idea.</p>
-    </div>
-    <div class="project-card">
-      <h3>Project Three</h3>
-      <img src="images/project3.png" alt="Project 3 preview" class="project-img">
-      <p>This is to showcase something I have built or plan to.</p>
-    </div>
+ <section id="projects" class="projects">
+  <h2 class="text-2xl font-bold mb-4">Projects</h2>
+  <div class="mb-4">
+    <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded mr-2" data-category="all">All</button>
+    <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded mr-2" data-category="web">Web</button>
+    <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded mr-2" data-category="design">Design</button>
   </div>
-</section>
-<div style="text-align: center;">
- <a href="resume/geo-thompson-resume.pdf" class="resume-btn" target="_blank">View My Resume</a>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-2" id="project-grid">
+    <div class="project-card" data-category="web">
+      <h3 class="text-lg font-semibold">Weather App</h3>
+      <p>HTML, CSS, JavaScript</p>
+    </div>
+    <div class="project-card" data-category="design">
+      <h3 class="text-lg font-semibold">Branding Kit</h3>
+      <p>Photoshop, Illustrator</p>
+<div class="project-card" data-category="web">
+  <h3 class="text-lg font-semibold">Portfolio Website</h3>
+  <p>HTML, TailwindCSS</p>
 </div>
 
-<!-- Footer Section -->
-<footer class="site-footer">
-  <p>© 2025 Geo Thompson</p>
-  <div class="social-icons">
-    <a href="mailto:geoa.thompson@outlook.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://github.com/geoathompson" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/geoathompson/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<div class="project-card" data-category="web">
+  <h3 class="text-lg font-semibold">Bookstore Website</h3>
+  <p>HTML, JavaScript, API</p>
+  <div class="flex gap-4">
+    <a href="https://geoathompson.github.io/Geobookstore-project/" target="_blank" class="text-blue-400 underline">Live Site</a>
+    <a href="https://github.com/geoathompson/Geobookstore-project" target="_blank" class="text-blue-400 underline">GitHub</a>
+  </div>
+</div>
+
+<div class="project-card" data-category="design">
+  <h3 class="text-lg font-semibold">Logo Design</h3>
+  <p>Illustrator, Figma</p>
+</div>
+
+
+
+</div>
+
+</footer>
+<footer class="bg-blue-100 py-6">
+  <div class="max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-4">
+    <!-- Copyright -->
+    <p>© 2025 Geo Thompson</p>
+
+    <!-- Icons -->
+    <div class="flex justify-center space-x-4">
+      <a href="mailto:geoa.thompson@outlook.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/geoathompson" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/geoathompson" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <!-- Resume Button -->
+    <a href="resume/geo-thompson-resume.pdf" class="resume-btn mt-2" target="_blank">View My Resume</a>
   </div>
 </footer>
 
 
-  </div>
-</footer>
-  </div>
-  <!-- Contact Section -->
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
-  <p>You can reach me at <a href="mailto:geoa.thompson@outlook.com">geoa.thompson@outlook.com</a></p>
+
 </section>
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+  });
+</script>
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card[data-category]');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+
+      projectCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || category === cardCategory) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 
